@@ -18,7 +18,22 @@ document.getElementById("add-money-btn").addEventListener("click",function(){
        ${addMoneyBank} at ${new Date()}`);
     const newBalance=currentBalance+Number(amount);
     setBalance(newBalance);
+    //history-container k dhore niye ashbo
+   const history=document.getElementById("history-container");
+   //new div create korbo
+   const newHistory=document.createElement("div");
+   //new div er innerHTML set korbo
+   newHistory.innerHTML=`
+      <div class="transaction-card p-5 bg-base-100 ">
+      Money added succeessfully from
+       ${addMoneyBank} accno: ${accno} at ${new Date()}
+      </div>
+      
+   `
+   //history container e new div append korbo
+   history.append(newHistory);
    }
+   
    else{
     alert("Invalid Pin");
     return;
