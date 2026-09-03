@@ -17,14 +17,14 @@ document.getElementById("sendmoney-btn").addEventListener("click",function(){
     }
     const pin=getValueFromInput("sendmoney-pin");
     if(pin=="1234"){
-        alert("SendMoney Successful");
+        alert(`Send Money successful to account: ${accno} at ${new Date()}`);
         //history-container k dhore niye ashbo
    const history=document.getElementById("history-container");
    //new div create korbo
    const newHistory=document.createElement("div");
    //new div er innerHTML set korbo
    newHistory.innerHTML=`
-      <div class="transaction-card p-5 bg-base-100 ">
+      <div class="transaction-card p-5 bg-base-100 rounded-2xl">
       Send Money succeessful to
        account: ${accno} at ${new Date()}
       </div>

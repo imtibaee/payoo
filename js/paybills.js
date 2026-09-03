@@ -22,6 +22,14 @@ document.getElementById("paybill-btn").addEventListener("click",function(){
        ${payBillBank} at ${new Date()}`);
     const newBalance=currentBalance-Number(amount);
     setBalance(newBalance);
+   const history=document.getElementById("history-container");
+  const newHistory=document.createElement("div");
+    newHistory.innerHTML=`
+      <div class="transaction-card p-5 bg-base-100 rounded-2xl">
+     Payment succeessful to
+       ${payBillBank} accno: ${accno} at ${new Date()}
+      `
+      history.append(newHistory);
    }
    else{
     alert("Invalid Pin");

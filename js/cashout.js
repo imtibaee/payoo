@@ -19,8 +19,15 @@ if(newBalance<0){
 }
     const pin=getValueFromInput("cashout-pin");
     if(pin=="1234"){
-        alert("Cashout successful");
+        alert(`Cashout successful to agent number: ${cashoutNumber} at ${new Date()}`);
        setBalance(newBalance);
+       const history=document.getElementById("history-container");
+       const newHistory=document.createElement("div");
+       newHistory.innerHTML=`
+       <div class="transaction-card p-5 bg-base-100 rounded-2xl">
+       Cashout successful to agent number: ${cashoutNumber} at ${new Date()}
+       </div>`
+       history.append(newHistory);
     }
     else{
         alert("Invalid Pin");

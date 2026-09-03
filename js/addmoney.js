@@ -24,7 +24,7 @@ document.getElementById("add-money-btn").addEventListener("click",function(){
    const newHistory=document.createElement("div");
    //new div er innerHTML set korbo
    newHistory.innerHTML=`
-      <div class="transaction-card p-5 bg-base-100 ">
+      <div class="transaction-card p-5 bg-base-100 rounded-2xl">
       Money added succeessfully from
        ${addMoneyBank} accno: ${accno} at ${new Date()}
       </div>
